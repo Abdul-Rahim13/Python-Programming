@@ -90,16 +90,6 @@ for x in string:
         freq[x] = 1
 
 print(freq)
-
-def count_pattern(pattern, lst):
-    count = 0
-    for i in range(len(pattern)):
-        for j in range(len(lst)):
-            if pattern[i] == lst[j]:
-                count+=1
-    print(count)
-
-count_pattern(['a','b'],['a','b', 'c', 'e', 'b', 'a', 'b', 'f'])
                 
 #choice = input("Enter Choice: ")
 print("1. Cube of a number")
@@ -118,5 +108,19 @@ def fac(x):
     else:
         return x*fac(x-1)
 
-cube(3)
-fac(5)
+
+def count_pattern(pattern, lst):
+    count = 0
+    unique_pattern = list(set(pattern))
+    for i in range(len(unique_pattern)):
+        for j in range(len(lst)):
+            if unique_pattern[i] == lst[j]:
+                count+=1
+                break
+    print(count)
+
+count_pattern(['a','b'],['a','b', 'c', 'e', 'b', 'a', 'b', 'f'])
+
+def mul(x):
+    for i in range(1,11):
+        print(f"{x} X {i} =  {x*i}")
