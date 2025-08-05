@@ -1,12 +1,14 @@
-def bubble_sort(lst):
-    n = len(lst)
-    for i in range(n):
-        for j in range(n - i - 1):
-            if lst[j] > lst[j+1]:
-                temp = lst[j]
-                lst[j] = lst[j+1]
-                lst[j+1] = temp
-    return lst
+def dups(lst):
+    duplicates = []
+    for i in range(len(lst)):
+        for j in range(i + 1, len(lst)):
+            if lst[i] == lst[j] and lst[i] not in duplicates:
+                duplicates.append(lst[i])
+    return duplicates
 
-result = bubble_sort(['P','Y','T','H','O','N'])
-print(result)
+numbers = [1, 2, 3, 2, 4, 5, 1, 6, 3, 7]
+
+result = dups(numbers)
+
+print("Original List:", numbers)
+print("Duplicate Elements:", result)
