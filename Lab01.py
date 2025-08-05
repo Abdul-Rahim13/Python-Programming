@@ -226,3 +226,67 @@ for i in range(n):
 
 for items in result:
     print(items)
+
+matrix1 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+matrix2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+n = len(matrix1)
+result = []
+
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(matrix1[i][j] * matrix2[i][j])
+    result.append(row)
+
+for items in result:
+    print(items)
+
+class Number:
+    Multiplier = 10
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def add(self):
+        return self.x + self.y
+    
+    def mul(self):
+        return self.x * self.__class__.Multiplier
+    
+    def sub(self):
+        return self.x - self.y
+    
+    def value(self):
+        return(self.x, self.y)
+    
+    def value(self, val):
+        self.x, self.y = val
+
+    def value(self):
+        self.x = None
+        self.y = None
+
+num = Number(4,5)
+
+print(f"Add: {num.add()}")
+print(f"Multiply: {num.mul()}")
+print(f"sub: {num.sub()}")
+
+num.value = (1,2)
+print(f"updated value: {num.value}")
+
+del num.value
+print(f"Deleted: {num.value}")
+
+
