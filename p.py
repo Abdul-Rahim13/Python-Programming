@@ -1,38 +1,12 @@
-class Number:
-    Multiplier = 10
+def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if lst[j] > lst[j+1]:
+                temp = lst[j]
+                lst[j] = lst[j+1]
+                lst[j+1] = temp
+    return lst
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def add(self):
-        return self.x + self.y
-    
-    def mul(self):
-        return self.x * self.__class__.Multiplier
-    
-    def sub(self):
-        return self.x - self.y
-    
-    def value(self):
-        return(self.x, self.y)
-    
-    def value(self, val):
-        self.x, self.y = val
-
-    def value(self):
-        self.x = None
-        self.y = None
-
-num = Number(4,5)
-
-print(f"Add: {num.add()}")
-print(f"Multiply: {num.mul()}")
-print(f"sub: {num.sub()}")
-
-num.value = (1,2)
-print(f"updated value: {num.value}")
-
-del num.value
-print(f"Deleted: {num.value}")
-
+result = bubble_sort([5,3,2,1,4])
+print(result)
