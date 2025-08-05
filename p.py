@@ -8,5 +8,5 @@ def bubble_sort(lst):
                 lst[j+1] = temp
     return lst
 
-result = bubble_sort([5,3,2,1,4])
+result = bubble_sort(['P','Y','T','H','O','N'])
 print(result)
