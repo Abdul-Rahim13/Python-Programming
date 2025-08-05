@@ -288,5 +288,3 @@ print(f"updated value: {num.value}")
 
 del num.value
 print(f"Deleted: {num.value}")
-
-
