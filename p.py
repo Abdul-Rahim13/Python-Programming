@@ -1,15 +1,23 @@
-class Find_pair:
-    def __init__(self, lst, target):
-        self.lst = lst
-        self.target = target
-    
-    def find_pair(self):
-        for i in range(len(self.lst)):
-            for j in range(i+1, len(self.lst)):
-                if self.lst[i] + self.lst[j] == self.target:
-                    print(f"Pair found at indices: {i}, {j}")
+matrix1 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
 
-list = [1,2,3,4,5,6,7,8,9,10]
-tar = 6
-FP = Find_pair(list, tar)
-FP.find_pair()
+matrix2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+n = len(matrix1)
+result = []
+
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(matrix1[i][j] + matrix2[i][j])
+    result.append(row)
+
+for items in result:
+    print(items)

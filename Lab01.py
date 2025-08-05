@@ -191,3 +191,38 @@ tar = 6
 FP = Find_pair(list, tar)
 FP.find_pair()
 
+class Reverse_String:
+    def __init__(self, str):
+        self.str = str
+
+    def reverse_str(self):
+        for i in range(len(self.str)-1, -1, -1):
+            print({self.str[i]}, end = " ")
+
+string = "hello.py"
+RS = Reverse_String(string)
+RS.reverse_str()
+
+matrix1 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+matrix2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+n = len(matrix1)
+result = []
+
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(matrix1[i][j] + matrix2[i][j])
+    result.append(row)
+
+for items in result:
+    print(items)
