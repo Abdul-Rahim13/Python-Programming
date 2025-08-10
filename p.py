@@ -1,14 +1,30 @@
-def dups(lst):
-    duplicates = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            if lst[i] == lst[j] and lst[i] not in duplicates:
-                duplicates.append(lst[i])
-    return duplicates
+# 1. Create list a (odd numbers) and b (even numbers)
+a = [1, 3, 5]       # first three odd positive integers
+b = [2, 4, 6]       # first three even positive integers
 
-numbers = [1, 2, 3, 2, 4, 5, 1, 6, 3, 7]
+# 2. Create list c by combining a and b
+c = a + b
 
-result = dups(numbers)
+# 3. Create sorted copy d of c (leave c unchanged)
+d = sorted(c)
 
-print("Original List:", numbers)
-print("Duplicate Elements:", result)
+# 4. Reverse d in-place
+d.reverse()
+
+# 5. Set fourth element of c to 42
+c[3] = 42
+
+# 6. Append 10 to d
+d.append(10)
+
+# 7. Append 7, 8, and 9 to c
+c.extend([7, 8, 9])
+
+# 8. Print first three elements of c
+print("First three elements of c:", c[:3])
+
+# 9. Print last element of d without using length
+print("Last element of d:", d[-1])
+
+# 10. Print length of d
+print("Length of d:", len(d))
