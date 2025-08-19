@@ -15,7 +15,7 @@ def BFS (start, goal):
     queue = ([(cost, start)])
 
     while queue:
-        cost, current = queue.pop(0)
+        cost, current = queue.pop()
         if current == goal:
             path.append(current)
             return cost, path
@@ -23,7 +23,7 @@ def BFS (start, goal):
             path.append(current)
             visited.add(current)
             
-            for x,y in Graph.get(current,{}).items():
+            for x,y in reversed(Graph.get(current,{}).items()):
                 queue.append((y+cost, x))
     return float('inf'), None
 
