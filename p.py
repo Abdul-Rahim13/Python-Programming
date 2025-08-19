@@ -1,17 +1,30 @@
-months = [
-    "January", "February", "March", "April",
-    "May", "June", "July", "August",
-    "September", "October", "November", "December"
-]
+Graph = {
+    'A': {},
+    'B': {'E':2},
+    'C': {'F':1},
+    'D': {'B':3, 'G':8},
+    'E': {'G':2},
+    'F': {'E':0, 'G':4},
+    'S': {'A':3, 'C':2, 'D':2}
+}
 
-calendar = {}
+def BFS (start, goal):
+    cost = 0
+    path = []
+    visited = set()
+    queue = ([(cost, start)])
 
-for month in months:
-    weeks = {}
-    for week_num in range(1, 5):   
-        weeks[f"Week {week_num}"] = []
-    calendar[month] = weeks
+    while queue:
+        cost, current = queue.pop(0)
+        if current == goal:
+            path.append(current)
+            return cost, path
+        if current not in visited:
+            path.append(current)
+            visited.add(current)
+            
+            for x,y in Graph.get(current,{}).items():
+                queue.append((y+cost, x))
+    return float('inf'), None
 
-calendar["July"]["Week 2"].append("Summer BBQ party")
-
-print(calendar["July"]["Week 2"])
+print(BFS('S','G'))
